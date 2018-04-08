@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="module" method="upgrade" client="site">
+	<name>MOD_K2_LIST_ITEMS</name>
+	<creationDate>Feb 2018</creationDate>
+	<author>Uziel Almeida Oliveira - Ponto Mega</author>
+	<authorEmail>contato@pontomega.com.br</authorEmail>
+	<authorUrl>https://www.pontomega.com.br</authorUrl>
+	<copyright>Copyright © 2018 - All rights reserved.</copyright>
+	<license>GNU General Public License v2.0</license>
+	<version>1.0.00</version>
+	<description>MOD_K2_LIST_ITEMS_DESCRIPTION</description>
+	<files>
+		<filename module="mod_k2_list_items">mod_k2_list_items.php</filename>
+		<filename>mod_k2_list_items.xml</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset
+				name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+        	<fieldset name="settings" label="MOD_SETTINGS" description="MOD_SETTINGS_FIELDSET_DESCRIPTION">
+				<field name="categories" multiple="true" type="sql" default="" label="MOD_CATEGORY" query="SELECT id, name FROM #__k2_categories" key_field="id" value_field="name" />
+			    <field type="text" label="MOD_ITEMS_TOTAL" name="items_total" description="MOD_ITEMS_TOTAL_DESCRIPTION" default="32" />
+				<field type="text" label="MOD_ITEMS_PER_COLUMN" name="items_per_column" description="MOD_ITEMS_PER_COLUMN_DESCRIPTION" default="4" />
+                 <field type="text" label="MOD_CUSTOM_TITLE" name="custom_title" description="MOD_CUSTOM_TITLE_DESCRIPTION" default="" />
+                <field type="text" label="MOD_EXTRA_FIELD_SEQUENCE" name="extra_field_sequence" dsescription="MOD_EXTRA_FIELD_SEQUENCE_DESC" default="0" />
+                 <field type="text" label="MOD_ITEMS_EFFECTS" name="effects" description="MOD_ITEMS_EFFECTS_DESCRIPTION" default="fadeIn" />
+                 <field type="radio" label="SHOW_CATEGORY" name="show_category" class="btn-group btn-group-yesno" default="0">
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                 </field>
+                <field name="custom_itemid" type="menuitem" default="" label="MENU_ITEM" description="SELECT_A_MENU_ITEM_DESC">
+                <option value="">SELECT_A_MENU_ITEM</option>
+                </field>
+            </fieldset>
+		</fields>
+
+
+	</config>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_k2_list_items.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_k2_list_items.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_k2_list_items.sys.ini</language>
+		<language tag="pt-BR">pt-BR/pt-BR.mod_k2_list_items.ini</language>
+	</languages>
+</extension>
