@@ -1,2 +1,2 @@
-# mod_k2_list_items
-An alternative K2 List Items modules
+# K2 List Items - by Ponto Mega
+An alternative module for K2 List Items 
